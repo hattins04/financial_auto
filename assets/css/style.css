@@ -1,9 +1,4 @@
-/**
- * Support: web-master72@yandex.ru;
- * Author: web-master72
- *
- *
-/* ---------------------------------------------- /*
+
  * General styles
 /* ---------------------------------------------- */
 
@@ -266,6 +261,10 @@ a,
 	background: transparent;
 	border: 2px solid #222;
 }
+.home-button {
+  padding-top: 50px;
+
+}
 
 /* ---------------------------------------------- /*
  * Alerts style
@@ -464,6 +463,10 @@ a,
  * Owl slider
 /* ---------------------------------------------- */
 
+.owl-carousel img {
+  height: 150px;
+  width: auto;
+}
 .owl-theme .owl-controls .owl-buttons div {
 	background: #90C695;
 	font-size: 24px;
@@ -534,18 +537,14 @@ a,
 	overflow: hidden;
 
 }
-.wrapper-bg {
-	background: url(../images/bg.jpg) no-repeat center fixed;
-	-webkit-background-size: cover;
-			background-size: cover;
-}
+
 .section {
 	position: relative;
 	padding: 120px 0;
 }
 
 .color-overlay {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.3);
 	padding: 60px 0;
 }
 
@@ -570,7 +569,7 @@ a,
 }
 
 .callout-dark {
-	background: #222;
+	background: #E13C29;
 }
 
 .rotate {
@@ -744,11 +743,18 @@ a,
 /* ---------------------------------------------- */
 
 #about-header {
-	background: url(../images/bg.jpg) no-repeat center fixed;
+	background: url(../images/bg2.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
 			background-size: cover;
 }
+/* ---------------------------------------------- /*
+ * home page vehicle section
+/* ---------------------------------------------- */
 
+#vehicle h2 {
+  text-align: center;
+  padding-bottom: 30px;
+}
 /* ---------------------------------------------- /*
  * Service
 /* ---------------------------------------------- */
@@ -774,7 +780,7 @@ a,
 /* ---------------------------------------------- */
 
 #portfolio-header {
-	background: url(../images/bg.jpg) no-repeat center fixed;
+	background: url(../images/bg2.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
 			background-size: cover;
 }
@@ -854,7 +860,7 @@ a,
 /* ---------------------------------------------- */
 
 #team-header {
-	background: url(../images/bg.jpg) no-repeat center fixed;
+	background: url(../images/bg2.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
 			background-size: cover;
 }
@@ -879,12 +885,30 @@ a,
  * Contact
 /* ---------------------------------------------- */
 
+#team a {
+  color: #555A99;
+}
+/* ---------------------------------------------- /*
+ * Contact
+/* ---------------------------------------------- */
+
+.fa-envelope .fa-phone-square .fa-map-marker {
+  color: #555A99
+}
+#apply {
+ background: url(../images/handshake.png) no-repeat center fixed;
+	-webkit-background-size: cover;
+			background-size: cover;
+}
 #contact-header {
-	background: none;
+	background: #F3F1F1;
 	-webkit-background-size: cover;
 			background-size: cover;
 }
 
+#contact-data a {
+  color: #555A99
+}
 
 #contact-data {
 	background: #ebeff0;
