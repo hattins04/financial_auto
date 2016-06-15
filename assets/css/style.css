@@ -780,9 +780,11 @@ a,
 /* ---------------------------------------------- */
 
 #portfolio-header {
-	background: url(../images/bg2.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
 			background-size: cover;
+}
+#portfolio-header h2 {
+  color: #339C09;
 }
 
 .portfolio-item {
@@ -892,9 +894,7 @@ a,
  * Contact
 /* ---------------------------------------------- */
 
-.fa-envelope .fa-phone-square .fa-map-marker {
-  color: #555A99
-}
+
 #apply {
  background: url(../images/handshake.png) no-repeat center fixed;
 	-webkit-background-size: cover;
@@ -913,6 +913,16 @@ a,
 #contact-data {
 	background: #ebeff0;
 	text-align: center;
+}
+#map-section {
+	position: relative;
+	height: 450px;
+	width: 100%;
+}
+
+#map {
+	height: 450px;
+	width: 100%;
 }
 
 #footer {
