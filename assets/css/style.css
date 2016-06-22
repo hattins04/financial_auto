@@ -710,7 +710,9 @@ a,
 .custom-collapse .navbar-toggle .icon-bar {
 	background: #90C695;
 }
-
+.phone li {
+  font-size: 10px;
+}
 /* ---------------------------------------------- /*
  * Intro
 /* ---------------------------------------------- */
@@ -744,12 +746,18 @@ margin-bottom: 100px;
 /* ---------------------------------------------- /*
  * About
 /* ---------------------------------------------- */
-
+.list-unstyled {
+  font-size: 20px;
+}
+#about p {
+  font-size: 20px;
+}
 #about-header {
 	background: url(../images/bg2.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
 			background-size: cover;
 }
+
 /* ---------------------------------------------- /*
  * home page vehicle section
 /* ---------------------------------------------- */
@@ -783,6 +791,7 @@ margin-bottom: 100px;
 /* ---------------------------------------------- */
 
 #portfolio-header {
+  background: #000;
 	-webkit-background-size: cover;
 			background-size: cover;
 }
@@ -790,7 +799,7 @@ margin-bottom: 100px;
   color: #fff;
 }
 .btn-lg {
-  background-color: red;
+  background-color: #54CA32;
 }
 .btn-lg:hover {
   background-color: #fff;
@@ -829,6 +838,40 @@ margin-bottom: 100px;
 	text-align: center;
 	opacity: 0;
 	color: #222;
+}
+/* ---------------------------------------------- /*
+ * connect with us/ fa fa icons
+/* ---------------------------------------------- */
+.fa-twitter-square {
+  color: #4099FF;
+}
+.fa-twitter-square:hover {
+  color: #fff;
+}
+.fa-facebook-square {
+  color: #3b5998;
+}
+.fa-facebook-square:hover {
+  color: #fff;
+}
+.fa-youtube-square {
+  color: #bb0000;
+}
+.fa-youtube-square:hover {
+  color: #fff;
+}
+.fa-instagram {
+  color: #9b6954;
+}
+.fa-instagram:hover {
+  color: #fff;
+}
+
+.fa-google-plus-square {
+  color: #d34836;
+}
+.fa-google-plus-square:hover {
+  color: #fff;
 }
 
 /* ---------------------------------------------- /*

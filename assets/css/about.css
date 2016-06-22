@@ -895,7 +895,7 @@ a,
 /* ---------------------------------------------- */
 
 #team-header {
- background: url(../images/bg2.jpg) no-repeat center fixed;
+ background: #F0321B;
  -webkit-background-size: cover;
      background-size: cover;
 }
