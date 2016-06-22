@@ -735,7 +735,10 @@ a,
 }
 
 .hello {
-	margin: 0 0 100px;
+margin-bottom: 100px;
+}
+.hello img {
+
 }
 
 /* ---------------------------------------------- /*
@@ -784,7 +787,14 @@ a,
 			background-size: cover;
 }
 #portfolio-header h2 {
-  color: #339C09;
+  color: #fff;
+}
+.btn-lg {
+  background-color: red;
+}
+.btn-lg:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 .portfolio-item {
