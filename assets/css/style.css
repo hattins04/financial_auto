@@ -269,7 +269,7 @@ a,
 	border: 2px solid #222;
 }
 .home-button {
-  padding-top: 50px;
+  padding-top: 0px;
 
 }
 
@@ -471,7 +471,7 @@ a,
 /* ---------------------------------------------- */
 
 .owl-carousel img {
-  height: 150px;
+  height: 100px;
   width: auto;
 }
 .owl-theme .owl-controls .owl-buttons div {
@@ -547,7 +547,7 @@ a,
 
 .section {
 	position: relative;
-	padding: 120px 0;
+	padding: 100px 0;
 }
 
 .color-overlay {
@@ -731,7 +731,9 @@ a,
 	text-align: center;
 
 }
-
+#intro .btn {
+  margin: 15px;
+}
 
 #intro,
 #intro h1,
@@ -744,9 +746,11 @@ a,
 }
 
 .hello {
-margin-bottom: 100px;
+margin-bottom: 0px;
 }
-.hello img {
+.home-image  {
+  position: relative;;
+margin-top: 0;
 
 }
 

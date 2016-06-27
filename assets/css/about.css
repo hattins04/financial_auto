@@ -33,37 +33,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
- font-size: 64px;
- font-weight: 700;
- margin: 5px 0 15px;
+	font-size: 64px;
+	font-weight: 700;
+	margin: 5px 0 15px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 h2 {
- font-size: 46px;
- font-weight: 700;
+	font-size: 46px;
+	font-weight: 700;
+  font-family: 'PT Sans', sans-serif;
 }
 
 h3 {
- font-size: 22px;
- text-transform: uppercase;
- margin: 5px 0 10px;
+	font-size: 22px;
+	text-transform: uppercase;
+	margin: 5px 0 10px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 h4 {
- font-size: 16px;
- margin: 5px 0 10px;
+	font-size: 16px;
+	margin: 5px 0 10px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 h5 {
- font-size: 14px;
+	font-size: 14px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 h6 {
- font-size: 13px;
+	font-size: 13px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 p {
- margin: 0 0 15px;
+	margin: 0 0 15px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 /* ---------------------------------------------- /*
