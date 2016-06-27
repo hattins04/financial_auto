@@ -11,10 +11,13 @@ body {
 
 strong { font-weight: 500; }
 
-a, a:hover, a:focus {
-	color: #F0321B;
-	text-decoration: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+a {
+ color: #90C695;
+}
+
+a:hover {
+ color: #fff;
+ text-decoration: none;
 }
 
 h1, h2 {
