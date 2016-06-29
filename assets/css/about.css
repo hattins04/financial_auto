@@ -20,6 +20,7 @@ a {
 
 a:hover {
  color: #fff;
+ text-decoration: none;
 }
 
 /* ---------------------------------------------- /*
@@ -860,7 +861,40 @@ a,
  opacity: 0;
  color: #222;
 }
+/* ---------------------------------------------- /*
+ * connect with us/ fa fa icons
+/* ---------------------------------------------- */
+.fa-twitter-square {
+  color: #4099FF;
+}
+.fa-twitter-square:hover {
+  color: #fff;
+}
+.fa-facebook-square {
+  color: #3b5998;
+}
+.fa-facebook-square:hover {
+  color: #fff;
+}
+.fa-youtube-square {
+  color: #bb0000;
+}
+.fa-youtube-square:hover {
+  color: #fff;
+}
+.fa-instagram {
+  color: #9b6954;
+}
+.fa-instagram:hover {
+  color: #fff;
+}
 
+.fa-google-plus-square {
+  color: #d34836;
+}
+.fa-google-plus-square:hover {
+  color: #fff;
+}
 /* ---------------------------------------------- /*
 * Testimonials
 /* ---------------------------------------------- */
@@ -1071,6 +1105,18 @@ background: url(../images/handshake.png) no-repeat center fixed;
 /* ---------------------------------------------- /*
 * Media
 /* ---------------------------------------------- */
+@media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */
+
+}
+@media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px) { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+#footer .social {
+  padding-left: 400px;
+}
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
 @media (max-width: 992px) {
 
