@@ -40,6 +40,122 @@
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+         <link href="app2/style.css" rel="stylesheet">
+         <link href="app2/rangeslider.css" rel="stylesheet">
+
+
+   <script type="text/javascript">
+    function updateTextInput(val) {
+      document.getElementById('textInput').innerHTML=val; 
+    }
+  </script>
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+<style>
+
+label > input{ /* HIDE RADIO */
+  display:none;
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+  background-color:orange;
+}
+
+
+
+.slider {
+  width: 200px;
+  margin: 100px auto;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 20px;
+  margin: 0;
+  border: none;
+  padding: 1px 2px;
+  border-radius: 14px;
+  background: #232528;
+  box-shadow: inset 0 1px 0 0 #0d0e0f, inset 0 -1px 0 0 #3a3d42;
+  -webkit-box-shadow: inset 0 1px 0 0 #0d0e0f, inset 0 -1px 0 0 #3a3d42;
+  outline: none; /* no focus outline */
+}
+
+input[type="range"]::-moz-range-track {
+  border: inherit;
+  background: transparent;
+}
+
+input[type="range"]::-ms-track {
+  border: inherit;
+  color: transparent; /* don't drawn vertical reference line */
+  background: transparent;
+}
+
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+  background: transparent;
+}
+
+input[type="range"]::-ms-tooltip {
+  display: none;
+}
+
+/* thumb */
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 18px;
+  border: none;
+  border-radius: 12px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #529de1), color-stop(100%, #245e8f)); /* android <= 2.2 */
+  background-image: -webkit-linear-gradient(top , #529de1 0, #245e8f 100%); /* older mobile safari and android > 2.2 */;
+  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%); /* W3C */
+}
+input[type="range"]::-moz-range-thumb {
+  width: 40px;
+  height: 18px;
+  border: none;
+  border-radius: 12px;
+  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%); /* W3C */
+}
+
+input[type="range"]::-ms-thumb {
+  width: 40px;
+  height: 18px;
+  border-radius: 12px;
+  border: 0;
+  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%); /* W3C */
+}
+
+.warning{
+    border: 1px solid red;
+}
+
+#msform input.warning {
+    border: 1px solid #FF0000;
+}
+
+</style>
+
 
     </head>
 
@@ -119,340 +235,261 @@
         <!-- Top content -->
         <div id="top-content" class="top-content">
             <div class="container">
-
-
-
                 <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
-                    	<form role="form" action="" method="post" class="f1">
+                        <!-- multistep form -->
+                <form id="msform" method = "POST" action = "action.php">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active">CHOOSE A VEHICLE</li>
+                        <li>SELECT A BUDGET</li>
+                        <li>GENERAL INFO</li>
+                        <li>FINANCIAL INFO</li>
+                        
+                    </ul>
+                    <!-- fieldsets -->
+                    <fieldset>
+                       <h2 class="fs-title">CHOOSE A VEHICLE</h2>
+                       <h3 class="fs-subtitle">Please select the type of vehicle you're looking for.</h3><br/>
+                        
+                                      
+                                      <label class="img1" for="vehicle-car">
+                                        <input type="radio" name="vehicle_type" id="vehicle-car" value="car">
+                                        <img class="icon-vehicle img" src="assets/images/icons/car.png" style = "max-width:100%;height:auto;" alt="Car">
+                                        <p class="text-center">Car</p>
+                                      </label>
+                                      <label class="img1" for="vehicle-suv">
+                                        <input type="radio" name="vehicle_type" id="vehicle-suv" value="suv">
+                                        <img class="icon-vehicle img" src="assets/images/icons/suv.png" style = "max-width:100%;height:auto;" alt="SUV">
+                                        <p class="text-center">SUV</p>
+                                      </label>
+                                      <label  class="img1" for="vehicle-truck">
+                                        <input type="radio" name="vehicle_type" id="vehicle-truck" value="truck">
+                                        <img class="icon-vehicle img" src="assets/images/icons/truck.png" style = "max-width:100%;height:auto;" alt="Truck">
+                                        <p class="text-center">Truck</p>
+                                      </label>
+                                      <label class="img1" for="vehicle-van">
+                                        <input type="radio" name="vehicle_type" id="vehicle-van" value="van">
+                                        <img class="icon-vehicle img " src="assets/images/icons/van.png" style = "max-width:100%;height:auto;" alt="Van">
+                                        <p class="text-center">Van</p>
+                                      </label>
+                                      <br/><br/>
 
-                    		<h3>Get Driving Your Dream Vehicle Today!</h3>
-                    		<p>Fill in the form to get instantly qualified</p>
-                    		<div class="f1-steps">
-                    			<div class="f1-progress">
-                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
-                    			</div>
-                          <div class="f1-step active">
-                    				<div class="f1-step-icon"><i class="fa fa-car"></i></div>
-                    				<p>Select Vehicle and Monthly Payment</p>
-                    			</div>
-                    			<div class="f1-step">
-                    				<div class="f1-step-icon"><i class="fa fa-key"></i></div>
-                    				<p>Basic Information</p>
-                    			</div>
-                    		    <div class="f1-step">
-                    				<div class="f1-step-icon"><i class="fa fa-user"></i></div>
-                    				<p>Detailed Information</p>
-                    			</div>
-                    		</div>
-
-                    		<fieldset>
-                    		    <h4>Select Vehicle Type</h4>
-                    			<div class="form-group">
-                    			    <label class="sr-only" for="f1-vehicle-type">Select Vehicle Type</label>
-                                    <select name="vehicle" data-required="true">
-                                        <option value="" selected="selected" >Select Vehicle Type</option>
-                                          <option value="car">Car</option>
-                                          <option value="suv">SUV</option>
-                                          <option value="truck">Truck</option>
-                                          <option value="van">Van</option>
-                                      </select>
-                           </div>
-                                <div class="form-group">
-                                  <h4>What Is a Comfortable Monthly Payment?</h4>
-                                    <label class="sr-only" for="f1-last-name">ei. 200</label>
-                                    <input type="text" name="f1-last-name" placeholder="ei. 200" class="f1-last-name form-control" id="f1-last-name">
+                        <input type="button" name="next" class="next action-button" value="Next" required=""/>
+                                 
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">SELECT A BUDGET</h2>
+                        <h3 class="fs-subtitle">Please select a monthly payment that you are comfortable spending.</h3>
+                            <div class="slider">
+                              <input type="range" value="200" width="100%" name="rangeInput" min="200" max="1000" onchange="updateTextInput(this.value);">                                              
+                              <span>$ <b style="text-align:center;" id="textInput">200</b>/month</span>
+                              </div>       
+                       
+                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                        <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">GENERAL INFO</h2>
+                        <h3 class="fs-subtitle">Please tell us some infomation about yourself.</h3>
+                             <div class = "row">
+                                <div class = "col-md-6 col-sm-6">
+                                    <div class = "col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label style = "width:100%;" class="control-label">First Name</label>
+                                            <input class="form-control floatlabel" type="text" name="first_name" id="first_name" placeholder="First Name"  >
+                                        </div>
+                                        <div class="form-group">
+                                            <label style = "width:100%;" for="last_name" class="control-label">Last Name</label>
+                                            <input class="form-control floatlabel" type="text" name="last_name" id="last_name" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                     <div class = "col-md-6">
+                                         <div class="form-group">
+                                            <label style = "width:100%;" for="email" class="control-label">Email</label>
+                                            <input class="form-control floatlabel" type="email" name="email" id="email" placeholder="Email">
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="phone" class="control-label">Phone</label>
+                                            <input class="form-control floatlabel" type="tel" name="phone" id="phone" placeholder="Phone">
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class = "col-md-6">
+                                    <div class = "col-md-12">
+                                     
+                                        <div class="form-group">
+                                        <label for="address" class="control-label">Address</label>
+                                        <input class="form-control floatlabel" type="text" name="address" id="address" placeholder="Address">
+                                      </div>
+                                    </div>
+                                     
+                                         <div class = "col-md-4">
+                                              <div class="form-group">
+                                                <label for="city" class="control-label">City</label>
+                                                <input class="form-control floatlabel" type="text" name="city" id="city" placeholder="City">
+                                              </div>
+                                         </div>
+                                         <div class = "col-md-4">
 
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-next">Next</button>
-                                </div>
-                            </fieldset>
-                                    <!--Form 2 second stage-->
+                                            <div class="form-group">
+                                                    <label for="province" class="control-label">Province</label>
+                                                    <select class="form-control" name="province" id="province">
+                                                      <option value="">Province</option>
+                                                      <option value="AB">Alberta</option>
+                                                      <option value="BC">British Columbia</option>
+                                                      <option value="MB">Manitoba</option>
+                                                      <option value="NB">New Brunswick</option>
+                                                      <option value="NL">Newfoundland and Labrador</option>
+                                                      <option value="NS">Nova Scotia</option>
+                                                      <option value="ON">Ontario</option>
+                                                      <option value="PE">Prince Edward Island</option>
+                                                      <option value="QC">Quebec</option>
+                                                      <option value="SK">Saskatchewan</option>
+                                                      <option value="NT">Northwest Territories</option>
+                                                      <option value="NU">Nunavut</option>
+                                                      <option value="YT">Yukon</option>
+                                                    </select>
+                                                  </div>
+                                         </div>
+                                        <div class = "col-md-4">
+                                             <div class="form-group">
+                                                <label for="postcode" class="control-label">Postal</label>
+                                                <input class="form-control floatlabel" type="text" name="postcode" id="postcode" placeholder="Postal" maxlength="7">
+                                              </div>
+                                        </div>
+                                    </div><br/>
+                                <p style = "color:green;">By applying for this car loan I agree to BuyFromCaf.com Terms and Conditions and Privacy Policy. I also agree to receive BuyFromCaf.com and their partners' electronic communications.</p>
 
-                            <fieldset>
-                                <h4>Basic Information</h4>
+                             </div>
+                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                       <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">FINANCIAL INFO</h2>
+                        <h3 class="fs-subtitle">Last step, we need some financial information.</h3>
+                             <div class = "row">
+                                <div class = "col-md-6">
+                                    
+                                        <div class = "col-md-4">
+                                            <div class="form-group">
+                                                <label for="birth_day" class="control-label">Day</label>
+                                                <select class="form-control floatlabel" name="birth_day" id="birth_day">
+                                                  <option value="">Day</option>
+                                                  <option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option> </select>
+                                              </div>
+                                        </div>
+                                        <div class = "col-md-4">
+                                             <div class="form-group">
+                                                <label for="birth_month" class="control-label">Month</label>
+                                                <select class="form-control floatlabel" name="birth_month" id="birth_month">
+                                                  <option value="">Month</option>
+                                                  <option value="January">January</option>
+                                                  <option value="February">February</option>
+                                                  <option value="March">March</option>
+                                                  <option value="April">April</option>
+                                                  <option value="May">May</option>
+                                                  <option value="June">June</option>
+                                                  <option value="July">July</option>
+                                                  <option value="August">August</option>
+                                                  <option value="September">September</option>
+                                                  <option value="October">October</option>
+                                                  <option value="November">November</option>
+                                                  <option value="December">December</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                        <div class = "col-md-4">
+                                            <div class="form-group">
+                                        <label for="birth_year" class="control-label">Year</label>
+                                        <select class="form-control floatlabel" name="birth_year" id="birth_year">
+                                          <option value="">Year</option>
+                                          <option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option>                        </select>
+                                      </div>
+                                
 
-                                <div class="form-group">
-                                  <label class="sr-only" for="f1-first-name">First Name..</label>
-                                  <input type="text" name="f1-first-name" placeholder="First Name.." class="f1-first-name form-control" id="f1-first-name">
+                                    </div>
+                                    <div class = "col-md-12">
+                                        <div class="form-group">
+                                            <label for="rent_or_own" style = "width:100%;" class="control-label">Do you rent or own your home?</label>
+                                            <select class="form-control floatlabel" name="rent_or_own" id="rent_or_own">
+                                              <option value="">Do you rent or own your home?</option>
+                                              <option value="Rent">Rent</option>
+                                              <option value="Own">Own</option>
+                                              <option value="Other">Other</option>
+                                            </select>
+                                          </div>
+                                    </div>
+                                     <div class = "col-md-6">
+                                         <div class="form-group">
+                                            <label for="time_at_residence" style = "width:100%;" class="control-label">Years at residence?</label>
+                                            <select class="form-control floatlabel" name="time_at_residence" id="time_at_residence">
+                                              <option value="">Years at residence?</option>
+                                              <option value="Less than 1 year">Less than 1 year</option>
+                                              <option value="1 to 2 years">1 to 2 years</option>
+                                              <option value="2 to 4 years">2 to 4 years</option>
+                                              <option value="5 or more years">5 or more years</option>
+                                            </select>
+                                          </div>
+                                    </div>
+                                     <div class = "col-md-6">
+                                          <div class="form-group">
+                                            <label for="monthly_payment" style = "width:100%" class="control-label">Monthly Payment</label>
+                                            <input class="form-control floatlabel numbersOnly" type="text" name="monthly_payment" id="monthly_payment" placeholder="Monthly Payment">
+                                          </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                  <label class="sr-only" for="f1-last-name">Last Name..</label>
-                                  <input type="text" name="f1-last-name" placeholder="Last Name.." class="f1-last-name form-control" id="f1-last-name">
+                                <div class = "col-md-6">
+                                    <div class = "col-md-6">
+                                     
+                                       <div class="form-group">
+                                        <label for="employer" style = "width:100%"class="control-label">Current Employer</label>
+                                        <input class="form-control floatlabel" type="text" name="employer" id="employer" placeholder="Current Employer">
+                                      </div>
+                                    </div>
+                                     <div class = "col-md-6">
+                                     
+                                      <div class="form-group">
+                                        <label for="job_title" style = "width:100%" class="control-label">Job Title</label>
+                                        <input class="form-control floatlabel" type="text" name="job_title" id="job_title" placeholder="Job Title">
+                                      </div>
+                                    </div>
+                                     <div class = "col-md-12">
+                                         <div class="form-group">
+                                            <label for="on_job_3_months" style = "width:100%" class="control-label">Have you been employed for 3+ months?</label>
+                                            <select class="form-control floatlabel" name="on_job_months" id="on_job_months">
+                                              <option value="">Have you been employed for 3+ months?</option>
+                                              <option value="Yes">Yes</option>
+                                              <option value="No">No</option>
+                                            </select>
+                                          </div>
+                                      </div>   
+                                      <div class = "col-md-12">
+                                          <div class="form-group">
+                                            <label for="monthly_income" style = "width:100%" class="control-label">Monthly Income</label>
+                                            <input class="form-control floatlabel numbersOnly" type="text" name="monthly_income" id="monthly_income" placeholder="Monthly Income">
+                                          </div>
+                                      </div>   
+                                       
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-email">Email</label>
-                                    <input type="text" name="f1-email" placeholder="Email..." class="f1-email form-control" id="f1-email">
-                                </div>
-                                <div class="form-group">
-                                  <label class="sr-only" for="f1-phone-number">Phone Number</label>
-                                  <input type="text" name="f1-phone-number" placeholder="First Name.." class="f1-phone-number form-control" id="f1-phone-number">
-                                </div>
+                           
 
-                                <h4>Address</h4>
-                                <div class="f1-buttons">
-                                  <div class="form-group">
-                                    <label class="sr-only" for="f1-address">Address</label>
-                                    <input type="text" name="f1-address" placeholder="Address.." class="f1-address form-control" id="f1-address">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="sr-only" for="f1-city">City</label>
-                                    <input type="text" name="f1-city" placeholder="City.." class="f1-city form-control" id="f1-city">
-                                  </div>
+                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                        <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                      <p>*You may withdraw your consent at any time by unsubscribing our newsletter or contact us at finance@buyfromcaf.com</p><br/><br/><br/>
 
-                                  <div class="form-group">
-                                    <label class="sf-select">
-																	<select name="province" data-required="true">
-																			<option value="" selected="selected" >Select Province</option>
-																				<option value="car">Alberta</option>
-																				<option value="suv">British Columbia</option>
-																				<option value="truck">Manitoba</option>
-																				<option value="van">New Brunswick</option>
-																				<option value="van">New Foundland and Labradour</option>
-																				<option value="van">Nova Scotia</option>
-																				<option value="van">Ontario</option>
-																				<option value="van">Prince Edward Island</option>
-																				<option value="van">Quebec</option>
-																				<option value="van">Saskatchewan</option>
-																				<option value="van">North West Territories</option>
-																				<option value="van">Nunavut</option>
-																				<option value="van">Yukon</option>
-																		</select>
-																		<span></span>
-																</label>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="sr-only" for="f1-postal-code">Postal Code</label>
-                                    <input type="text" name="f1-postal-code" placeholder="Postal Code.." class="f1-postal-code form-control" id="f1-postal-code">
-                                  </div>
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn btn-next">Next</button>
-                                </div>
-                            </fieldset>
+                      <input type="button" name="previous" class="previous action-button" value="Previous" />
+                      <input type="submit" class="btn btn-primary" style = "color:white;" name="submit"  value="Submit" />
+                    </fieldset>
 
-                            <fieldset>
-                                <h4>Date of Birth</h4>
-                                <div class="form-group">
-                                  <label class="sf-select">
-                               <select name="day" data-required="true">
-                                   <option value="" selected="selected" >Day</option>
-                                     <option value="car">1</option>
-                                     <option value="suv">2</option>
-                                     <option value="truck">3</option>
-                                     <option value="van">4</option>
-                                     <option value="van">5</option>
-                                     <option value="van">6</option>
-                                     <option value="van">7</option>
-                                     <option value="van">8</option>
-                                     <option value="van">9</option>
-                                     <option value="van">10</option>
-                                     <option value="van">11</option>
-                                     <option value="van">12</option>
-                                     <option value="van">13</option>
-                                     <option value="van">14</option>
-                                     <option value="van">15</option>
-                                     <option value="van">16</option>
-                                     <option value="van">17</option>
-                                     <option value="van">18</option>
-                                     <option value="van">19</option>
-                                     <option value="van">20</option>
-                                     <option value="van">21</option>
-                                     <option value="van">22</option>
-                                     <option value="van">23</option>
-                                     <option value="van">24</option>
-                                     <option value="van">25</option>
-                                     <option value="van">26</option>
-                                     <option value="van">27</option>
-                                     <option value="van">28</option>
-                                     <option value="van">29</option>
-                                     <option value="van">30</option>
-                                     <option value="van">31</option>
-                                 </select>
-                                 <span></span>
-                             </label>
-
-                                  <label class="sf-select">
-                              <select name="month" data-required="true">
-                                  <option value="" selected="selected" >Month</option>
-                                    <option value="car">January</option>
-                                    <option value="suv">February</option>
-                                    <option value="truck">March</option>
-                                    <option value="van">April</option>
-                                    <option value="van">May</option>
-                                    <option value="van">June</option>
-                                    <option value="van">July</option>
-                                    <option value="van">August</option>
-                                    <option value="van">September</option>
-                                    <option value="van">October</option>
-                                    <option value="van">November</option>
-                                    <option value="van">December</option>
-                                </select>
-                                <span></span>
-                            </label>
-
-                                  <label class="sf-select">
-                               <select name="year" data-required="true">
-                                   <option value="" selected="selected">Year</option>
-                                     <option value="car">2016</option>
-                                     <option value="suv">2015</option>
-                                     <option value="truck">2014</option>
-                                     <option value="van">2013</option>
-                                     <option value="van">2012</option>
-                                     <option value="van">2011</option>
-                                     <option value="van">2010</option>
-                                     <option value="van">2009</option>
-                                     <option value="van">2008</option>
-                                     <option value="van">2007</option>
-                                     <option value="van">2006</option>
-                                     <option value="van">2005</option>
-                                     <option value="van">2004</option>
-                                     <option value="van">2003</option>
-                                     <option value="van">2002</option>
-                                     <option value="van">2001</option>
-                                     <option value="van">2000</option>
-                                     <option value="van">1999</option>
-                                     <option value="van">1998</option>
-                                     <option value="van">1997</option>
-                                     <option value="van">1996</option>
-                                     <option value="van">1995</option>
-                                     <option value="van">1994</option>
-                                     <option value="van">1993</option>
-                                     <option value="van">1992</option>
-                                     <option value="van">1991</option>
-                                     <option value="van">1990</option>
-                                     <option value="van">1989</option>
-                                     <option value="van">1988</option>
-                                     <option value="van">1987</option>
-                                     <option value="van">1986</option>
-                                     <option value="van">1985</option>
-                                     <option value="van">1984</option>
-                                     <option value="van">1983</option>
-                                     <option value="van">1982</option>
-                                     <option value="van">1981</option>
-                                     <option value="van">1980</option>
-                                     <option value="van">1979</option>
-                                     <option value="van">1978</option>
-                                     <option value="van">1976</option>
-                                     <option value="van">1975</option>
-                                     <option value="van">1974</option>
-                                     <option value="van">1973</option>
-                                     <option value="van">1972</option>
-                                     <option value="van">1971</option>
-                                     <option value="van">1970</option>
-                                     <option value="van">1969</option>
-                                     <option value="van">1968</option>
-                                     <option value="van">1967</option>
-                                     <option value="van">1966</option>
-                                     <option value="van">1965</option>
-                                     <option value="van">1964</option>
-                                     <option value="van">1963</option>
-                                     <option value="van">1962</option>
-                                     <option value="van">1961</option>
-                                     <option value="van">1960</option>
-                                     <option value="van">1959</option>
-                                     <option value="van">1958</option>
-                                     <option value="van">1957</option>
-                                     <option value="van">1956</option>
-                                     <option value="van">1955</option>
-                                     <option value="van">1954</option>
-                                     <option value="van">1953</option>
-                                     <option value="van">1952</option>
-                                     <option value="van">1951</option>
-                                     <option value="van">1950</option>
-                                     <option value="van">1949</option>
-                                     <option value="van">1948</option>
-                                     <option value="van">1947</option>
-                                     <option value="van">1946</option>
-                                     <option value="van">1945</option>
-                                     <option value="van">1944</option>
-                                     <option value="van">1943</option>
-                                     <option value="van">1942</option>
-                                     <option value="van">1941</option>
-                                     <option value="van">1940</option>
-                                     <option value="van">1939</option>
-                                     <option value="van">1938</option>
-                                     <option value="van">1937</option>
-                                     <option value="van">1936</option>
-                                     <option value="van">1935</option>
-                                     <option value="van">1934</option>
-                                     <option value="van">1933</option>
-                                     <option value="van">1932</option>
-                                     <option value="van">1931</option>
-                                     <option value="van">1930</option>
-                                     <option value="van">1929</option>
-                                     <option value="van">1928</option>
-                                     <option value="van">1927</option>
-                                     <option value="van">1926</option>
-                                     <option value="van">1925</option>
-                                     <option value="van">1924</option>
-                                     <option value="van">1923</option>
-                                     <option value="van">1922</option>
-                                     <option value="van">1921</option>
-                                     <option value="van">1920</option>
-                                 </select>
-                                 <span></span>
-                             </label>
-                                </div>
-                                <h4>Your Residency</h4>
-                                <div class="form-group">
-                                  <label class="sf-select">
-																<select name="home" data-required="true">
-																		<option value="" selected="selected">Do you rent or own your own home?</option>
-																			<option value="rent">Rent</option>
-																			<option value="own">Own</option>
-																			<option value="other">Other</option>
-																	</select>
-																	<span></span>
-															</label>
-                                </div>
-                                <div class="form-group">
-                                <label class="sf-select">
-																<select name="residency" data-required="true">
-																		<option value="" selected="selected">Years at residency</option>
-																			<option value="#">Less than 1 year</option>
-																			<option value="#">1-2 years</option>
-																			<option value="#">2-4 years</option>
-																			<option value="#">5 years or more</option>
-																	</select>
-																	<span></span>
-															</label>
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="f1-monthly-payment">Monthly Payment</label>
-                              <input type="text" name="f1-monthly-payment" placeholder="Monthly Payment.." class="f1-monthly-payment form-control" id="f1-monthly-payment">
-                            </div>
-                            <h4>Your Employment</h4>
-                            <div class="form-group">
-                              <label class="sr-only" for="f1-work">Place of Work</label>
-                              <input type="text" name="f1-work" placeholder="Place of Work.." class="f1-work form-control" id="f1-work">
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="f1-job">Job Title</label>
-                              <input type="text" name="f1-job" placeholder="Job Title" class="f1-job form-control" id="f1-job">
-                            </div>
-                            <div class="form-group">
-                              <label class="sf-select">
-																<select name="residency" data-required="true">
-																		<option value="" selected="selected">Have you been employed for 3+ months?</option>
-																			<option value="#">Yes</option>
-																			<option value="#">No</option>
-																	</select>
-																	<span></span>
-															</label>
-                            </div>
-                            <div class="form-group">
-                              <label class="sr-only" for="f1-income">Monthly Income</label>
-                              <input type="text" name="f1-income" placeholder="Monthly Income" class="f1-income form-control" id="f1-income">
-                            </div>
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn btn-submit">Submit</button>
-                                </div>
-                            </fieldset>
-
-                    	</form>
-                    </div>
+                </form>
+                 <!-- jQuery -->
+        <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <!-- jQuery easing plugin -->
+        <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+                 
                 </div>
 
             </div>
@@ -464,7 +501,6 @@
     			<div class="container">
 
     				<div class="row">
-
     					<div class="col-md-6">
     						<p class="copy">
     							© 2016 Canadian Auto Finance, All Rights Reserved.
@@ -477,6 +513,7 @@
     						<i class="fa fa-instagram fa-2x"></i>
     						<i class="fa fa-google-plus-square fa-2x"></i>
     					</div>
+
     				</div><!-- .row -->
 
     			</div><!-- .container -->
@@ -487,20 +524,306 @@
 
     	</div><!-- .wrapper -->
 
+        <script>
+            //jQuery time
+var current_fs, next_fs, previous_fs; //fieldsets
+var left, opacity, scale; //fieldset properties which we will animate
+var animating; //flag to prevent quick multi-click glitches
+var fieldsetn = 1;
+
+$(".next").click(function(){
+var erros = 0;
+    //verificação de erros no primeiro fieldset
+  if (fieldsetn == 3) {
+     //teste de email
+     var emailVal=$('input[name="email"]').val();
+     emailantigo = emailVal.toString();
+     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+     
+     if ($('input[name="email"]').val().length === 0) {
+        $('input[name="email"]').addClass('warning');
+        $('input[name="email"]').attr("placeholder","Introduz um email válido"); 
+       erros = 1;}
+     else if(!emailReg.test(emailVal)) {
+      $('input[name="email"]').attr("placeholder","Email is Not Valid");  $('input[name="email"]').addClass('warning');
+      $('input[name="email"]').val('');
+            erros = 1;
+        }
+     else {
+       $('input[name="email"]').removeClass('warning');}//fim do teste
+   
+
+    if ($('input[name="first_name"]').val().length ===0){
+       $('input[name="first_name"]').addClass('warning');
+        $('input[name="first_name"]').attr("placeholder","Please enter first name");
+        erros = 1;
+    }
+    else {
+    $('input[name="first_name"]').removeClass('warning');
+    }
+
+
+    if ($('input[name="address"]').val().length ===0){
+       $('input[name="address"]').addClass('warning');
+        $('input[name="address"]').attr("placeholder","Please enter address");
+        erros = 1;
+    }
+    else {
+    $('input[name="address"]').removeClass('warning');
+    }
+
+    if ($('input[name="last_name"]').val().length ===0){
+       $('input[name="last_name"]').addClass('warning');
+        $('input[name="last_name"]').attr("placeholder","Please enter last name");
+        erros = 1;
+    }
+    else {
+    $('input[name="last_name"]').removeClass('warning');
+    }
+
+    if ($('input[name="phone"]').val().length ===0){
+       $('input[name="phone"]').addClass('warning');
+        $('input[name="phone"]').attr("placeholder","Please enter Phone Number");
+        erros = 1;
+    }
+    else {
+    $('input[name="phone"]').removeClass('warning');
+    }
+
+     if ($('input[name="city"]').val().length ===0){
+       $('input[name="city"]').addClass('warning');
+        $('input[name="city"]').attr("placeholder","Please enter City");
+        erros = 1;
+    }
+    else {
+    $('input[name="city"]').removeClass('warning');
+    }
+
+    if ($('select[name="province"]').val().length ===0){
+        $('select[name="province"]').addClass('warning');
+ 
+          erros = 1;
+        }
+    else {
+     $('select[name="province"]').removeClass('warning');}
+
+      if ($('input[name="postcode"]').val().length ===0){
+       $('input[name="postcode"]').addClass('warning');
+        $('input[name="postcode"]').attr("placeholder","Please enter PostCode");
+        erros = 1;
+    }
+    else {
+    $('input[name="postcode"]').removeClass('warning');
+    }
+  } //fim do primeiro fieldset
+
+  else if ( fieldsetn == 4) {//fieldset numero 3
+    //verificar nome
+    if ($('select[name="birth_day"]').val().length ===0){
+        $('select[name="birth_day"]').addClass('warning');
+ 
+          erros = 1;
+        }
+    else {
+     $('select[name="birth_day"]').removeClass('warning');}
+
+     
+      if ($('select[name="birth_month"]').val().length ===0){
+        $('select[name="birth_month"]').addClass('warning');
+ 
+          erros = 1;
+        }
+    else {
+     $('select[name="birth_month"]').removeClass('warning');}
+
+     
+
+      if ($('select[name="birth_year"]').val().length ===0){
+        $('select[name="birth_year"]').addClass('warning');
+ 
+          erros = 1;
+        }
+    else {
+     $('select[name="birth_year"]').removeClass('warning');}
+
+
+
+      if ($('select[name="rent_or_own"]').val().length ===0){
+        $('select[name="rent_or_own"]').addClass('warning');
+ 
+          erros = 1;
+        }
+    else {
+     $('select[name="rent_or_own"]').removeClass('warning');}
+
+
+
+  
+      if ($('select[name="time_at_residence"]').val().length ===0){
+        $('select[name="time_at_residence"]').addClass('warning');
+ 
+          erros = 1;
+        }
+    else {
+     $('select[name="time_at_residence"]').removeClass('warning');}
+
+     if ($('select[name="on_job_months"]').val().length ===0){
+        $('select[name="on_job_months"]').addClass('warning');
+ 
+          erros = 1;
+        }
+    else {
+     $('select[name="on_job_months"]').removeClass('warning');}
+
+
+
+      if ($('input[name="employer"]').val().length ===0){
+       $('input[name="employer"]').addClass('warning');
+        $('input[name="employer"]').attr("placeholder","Please enter Employer Name");
+        erros = 1;
+    }
+    else {
+    $('input[name="employer"]').removeClass('warning');
+    }
+
+      if ($('input[name="job_title"]').val().length ===0){
+       $('input[name="job_title"]').addClass('warning');
+        $('input[name="job_title"]').attr("placeholder","Please enter Job Title");
+        erros = 1;
+    }
+    else {
+    $('input[name="job_title"]').removeClass('warning');
+    }
+   
+
+      
+
+     if ($('input[name="monthly_income"]').val().length ===0){
+       $('input[name="monthly_income"]').addClass('warning');
+        $('input[name="monthly_income"]').attr("placeholder","Please enter monthely payement");
+        erros = 1;
+    }
+    else {
+    $('input[name="monthly_income"]').removeClass('warning');
+    }
+
+
+    if ($('input[name="monthly_payment"]').val().length ===0){
+       $('input[name="monthly_payment"]').addClass('warning');
+        $('input[name="monthly_payment"]').attr("placeholder","Please enter monthely payement");
+        erros = 1;
+    }
+    else {
+    $('input[name="monthly_payment"]').removeClass('warning');
+    }
+
+
+
+  }
+
+
+   
+ if (erros === 0){//inicio da animação
+    if(animating) return false;
+      animating = true;
+      fieldsetn = fieldsetn +1;
+      current_fs = $(this).parent();
+      next_fs = $(this).parent().next();
+
+}
+   
+    
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+    
+    //show the next fieldset
+    next_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+        step: function(now, mx) {
+            //as the opacity of current_fs reduces to 0 - stored in "now"
+            //1. scale current_fs down to 80%
+            scale = 1 - (1 - now) * 0.2;
+            //2. bring next_fs from the right(50%)
+            left = (now * 50)+"%";
+            //3. increase opacity of next_fs to 1 as it moves in
+            opacity = 1 - now;
+            current_fs.css({'transform': 'scale('+scale+')'});
+            next_fs.css({'left': left, 'opacity': opacity});
+        }, 
+        duration: 800, 
+        complete: function(){
+            current_fs.hide();
+            animating = false;
+        }, 
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+    });
+});
+
+$(".previous").click(function(){
+
+
+    if(animating) return false;
+    animating = true;
+      fieldsetn = fieldsetn - 1;
+    current_fs = $(this).parent();
+    previous_fs = $(this).parent().prev();
+    
+    //de-activate current step on progressbar
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+    
+    //show the previous fieldset
+    previous_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+        step: function(now, mx) {
+            //as the opacity of current_fs reduces to 0 - stored in "now"
+            //1. scale previous_fs from 80% to 100%
+            scale = 0.8 + (1 - now) * 0.2;
+            //2. take current_fs to the right(50%) - from 0%
+            left = ((1-now) * 50)+"%";
+            //3. increase opacity of previous_fs to 1 as it moves in
+            opacity = 1 - now;
+            current_fs.css({'left': left});
+            previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+        }, 
+        duration: 800, 
+        complete: function(){
+            current_fs.hide();
+            animating = false;
+        }, 
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+    });
+});
+
+
+ </script>
+ <script>
+  $( document ).ready(function() {
+   $('input[type="range"]').rangeslider();
+});
+  
+</script>
+
 
         <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/retina-1.1.0.min.js"></script>
         <script src="assets/js/scripts.js"></script>
         <!-- Custom scripts -->
       	<script src="assets/js/custom.js"></script>
+                <script src="app2/rangeslider.js"></script>
+
 
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
 
     </body>
+
+    
 
 </html>
