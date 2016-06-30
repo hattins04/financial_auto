@@ -979,6 +979,9 @@ background: url(../images/handshake.png) no-repeat center fixed;
  -webkit-background-size: cover;
      background-size: cover;
 }
+#contact-page {
+  height: 250px;
+}
 
 #contact-data a {
  color: #555A99
@@ -997,6 +1000,9 @@ background: url(../images/handshake.png) no-repeat center fixed;
 #map {
  height: 450px;
  width: 100%;
+}
+.google-map {
+  padding-top: 0px;
 }
 
 #footer {
