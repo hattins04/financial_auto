@@ -358,7 +358,6 @@ input[type="range"]::-ms-thumb {
                                               </div>
                                         </div>
                                     </div><br/>
-                                <p style = "color:green;">By applying for this car loan I agree to BuyFromCaf.com Terms and Conditions and Privacy Policy. I also agree to receive BuyFromCaf.com and their partners' electronic communications.</p>
 
                              </div>
                         <input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -545,7 +544,7 @@ var erros = 0;
 
      if ($('input[name="email"]').val().length === 0) {
         $('input[name="email"]').addClass('warning');
-        $('input[name="email"]').attr("placeholder","Introduz um email válido");
+        $('input[name="email"]').attr("placeholder","Email is Not Valid");
        erros = 1;}
      else if(!emailReg.test(emailVal)) {
       $('input[name="email"]').attr("placeholder","Email is Not Valid");  $('input[name="email"]').addClass('warning');

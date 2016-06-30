@@ -727,7 +727,7 @@ a,
 #intro {
 	background: rgba(34, 34, 34, .7) !important;
 	z-index: auto !important;
-	padding: 260px 0 160px 0;
+	padding: 160px 0 160px 0;
 	text-align: center;
 
 }
@@ -745,13 +745,13 @@ a,
 	color: #FFF;
 }
 
-.hello {
+.home-image {
 margin-bottom: 0px;
+position: relative;
 }
-.home-image  {
-  position: relative;;
-margin-top: 0;
-
+.hello   {
+position: relative;
+padding-top: -20;
 }
 
 /* ---------------------------------------------- /*
